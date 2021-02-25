@@ -479,6 +479,15 @@ var start = async (params) => {
     },
     taskOption
   );
+  
+    // 首页-电子发票底部-赚积分
+  await scheduler.regTask(
+    "fapiao",
+    async (request) => {
+      await require("./fapiao.js").doTask(request, options);
+    },
+    taskOption
+  );
 
   //积分查询
   await scheduler.regTask(
